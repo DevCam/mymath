@@ -1,0 +1,19 @@
+name: 'Test all'
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  test:
+    # runs-on: ubuntu-latest
+
+    steps:
+      - name: build
+        uses: lukka/get-cmake@v3.23.2
+
+      - name: Run CMake consuming CMakePresets.json and vcpkg.json by mean of vcpkg.
+        uses: lukka/run-cmake@v10
+        with:
+          configurePreset: 'ninja-multi-vcpkg'
+          buildPreset: 'ninja-multi-vcpkg'
