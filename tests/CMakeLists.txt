@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(mymath_tests C)
+project(mymath_tests)
 set(CMAKE_C_STANDARD 99)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/Modules/")
