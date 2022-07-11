@@ -1,14 +1,23 @@
-name: 'Test all'
+name: 'Automatic build'
 on:
-  pull_request:
-    types:
-      - opened
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .gitignore
+      - README.md
+      - LICENSE
 
 jobs:
-  test:
-    # runs-on: ubuntu-latest
+  test-all:
+    runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
       - name: build
         uses: lukka/get-cmake@v3.23.2
 
