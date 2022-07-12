@@ -12,9 +12,11 @@ jobs:
       - name: Get Cmake
         uses: lukka/get-cmake@latest
 
+      - name: list files
+        run: ls -la
+
       - name: run Cmake
         run: cmake --build $GITHUB_WORKSPACE
 
       - name: list directories
         run: ls
-
