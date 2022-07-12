@@ -27,5 +27,5 @@ jobs:
       - name: list all files
         run: ls -la
 
-      - name: list all files in bin
-        run: ls -la bin
+      - name: list all files in tests
+        run: ls -la tests
