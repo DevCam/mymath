@@ -24,8 +24,8 @@ jobs:
       - name: run tests
         run: tests/mymath_tests --quiet --jobs 0 --xml=results.xml --always-succeed
 
-      - name: list all files
-        run: ls -la
-
-      - name: list all files in tests
-        run: ls -la tests
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action/composite@v1
+        if: always()
+        with:
+          files: "results.xml"
