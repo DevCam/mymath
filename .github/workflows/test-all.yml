@@ -1,4 +1,4 @@
-name: 'Action shennenigans'
+name: 'Build and Test'
 on: [push]
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
         run: cmake --build . --target mymath_tests
 
       - name: run tests
-        run: tests/mymath_tests --quiet --jobs 0 --xml=results.xml --always-succeed
+        run: tests/mymath_tests --quiet --jobs 0 --xml=results.xml
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action/composite@v1
