@@ -19,7 +19,13 @@ jobs:
         run: cmake .
 
       - name: run Cmake
-        run: cmake --build . --target mymath_tests
+        run: mkdir bin && cmake --build ./bin --target mymath_tests
 
       - name: run tests
-        run: tests/mymath_tests
+        run: bin/tests/mymath_tests --quiet --jobs 0 --xml
+
+      - name: list all files
+        run: ls -la
+
+      - name: list all files in bin
+        run: ls -la bin
