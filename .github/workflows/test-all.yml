@@ -1,12 +1,5 @@
-name: 'Automatic build'
-on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - .gitignore
-      - README.md
-      - LICENSE
+name: 'Action shennenigans'
+on: [push]
 
 jobs:
   test-all:
@@ -15,5 +8,6 @@ jobs:
     steps:
       - name: Get Cmake
         uses: lukka/get-cmake@latest
+
       - name: list files
         run: ls
