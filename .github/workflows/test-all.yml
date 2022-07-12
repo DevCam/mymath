@@ -12,11 +12,14 @@ jobs:
       - name: Get Cmake
         uses: lukka/get-cmake@latest
 
+      - name: prepare directories
+        run: mkdir cmake-build-debug
+
       - name: list files
         run: ls -la
 
       - name: run Cmake
-        run: cmake --build .
+        run: cmake --build ./cmake-build-debug --target mymath_tests -j 6
 
-      - name: list directories
-        run: ls
+      - name: list all after build
+        run: ls -la
