@@ -8,7 +8,6 @@
 #  CRITERION_INCLUDE_DIRS - The Criterion include directories
 #  CRITERION_LIBRARIES - The libraries needed to use Criterion
 
-message("This script is being used")
 find_package(PkgConfig)
 
 find_path(CRITERION_INCLUDE_DIR criterion/criterion.h
