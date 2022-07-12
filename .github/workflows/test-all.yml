@@ -16,7 +16,7 @@ jobs:
         run: ls -la
 
       - name: run Cmake
-        run: cmake --build $GITHUB_WORKSPACE
+        run: cmake --build .
 
       - name: list directories
         run: ls
