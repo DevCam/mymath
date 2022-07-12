@@ -13,16 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: build
-        uses: lukka/get-cmake@v3.23.2
-
-      - name: Run CMake consuming CMakePresets.json and vcpkg.json by mean of vcpkg.
-        uses: lukka/run-cmake@v10
-        with:
-          configurePreset: 'ninja-multi-vcpkg'
-          buildPreset: 'ninja-multi-vcpkg'
+      - name: Get Cmake
+        uses: lukka/get-cmake@latest
+      - name: list files
+        run: ls
