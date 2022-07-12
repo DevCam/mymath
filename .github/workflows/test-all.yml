@@ -9,17 +9,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Get Cmake
-        uses: lukka/get-cmake@latest
-
       - name: Get criterion
-        run: sudo apt-get install libcriterion-dev -y
+        run: brew install criterion
 
       - name: prepare cmake
         run: mkdir cmake-build-debug && cmake .
 
-      - name: list files
-        run: ls -la
+      - name: Get Cmake
+        uses: lukka/get-cmake@latest
 
       - name: run Cmake
         run: cmake --build ./cmake-build-debug --target mymath_tests -j 6
