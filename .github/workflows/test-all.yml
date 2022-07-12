@@ -9,5 +9,5 @@ jobs:
       - name: Get Cmake
         uses: lukka/get-cmake@latest
 
-      - name: list files
-        run: ls
+      - name: run Cmake
+        run: lukka/run-cmake@v10
