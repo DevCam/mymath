@@ -12,8 +12,8 @@ jobs:
       - name: Get Cmake
         uses: lukka/get-cmake@latest
 
-      - name: prepare directories
-        run: mkdir cmake-build-debug
+      - name: prepare cmake
+        run: mkdir cmake-build-debug && cmake .
 
       - name: list files
         run: ls -la
