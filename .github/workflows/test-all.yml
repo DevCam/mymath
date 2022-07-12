@@ -12,14 +12,14 @@ jobs:
       - name: Get criterion
         run: brew install criterion
 
-      - name: prepare cmake
-        run: mkdir cmake-build-debug && cmake .
-
       - name: Get Cmake
         uses: lukka/get-cmake@latest
 
+      - name: prepare cmake
+        run: cmake .
+
       - name: run Cmake
-        run: cmake --build ./cmake-build-debug --target mymath_tests -j 6
+        run: cmake --build . --target mymath_tests
 
       - name: list all after build
         run: ls -la
