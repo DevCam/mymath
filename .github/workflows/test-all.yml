@@ -13,7 +13,7 @@ jobs:
         uses: lukka/get-cmake@latest
 
       - name: Get criterion
-        run: apt-get install libcriterion-dev
+        run: sudo apt-get install libcriterion-dev -y
 
       - name: prepare cmake
         run: mkdir cmake-build-debug && cmake .
