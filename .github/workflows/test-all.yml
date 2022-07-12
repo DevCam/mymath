@@ -6,8 +6,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Get Cmake
         uses: lukka/get-cmake@latest
 
       - name: run Cmake
-        run: lukka/run-cmake@v10
+        run: cmake --build $GITHUB_WORKSPACE
+
+      - name: list directories
+        run: ls
+
