@@ -1,14 +1,17 @@
 
 #include <string.h>
 #include <criterion/criterion.h>
+#include <criterion/new/assert.h>
+
 #include "../lib/mymath.h"
 
 Test(mymath, addition)
 {
-  cr_expect(add(2, 2) == 4, "Expected 2+2 to equal 4");
+  cr_assert(eq(int, add(2,2), 10));
 }
 
 Test(mymath, substraction)
 {
-  cr_expect(substract(2, 2) == 0, "Expected 2-2 to equal 0");
+  cr_assert(eq(int, substract(10, 5), 5));
+  cr_assert(eq(int, substract(-1, -2), 1));
 }
